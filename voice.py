@@ -2,7 +2,7 @@ import speech_recognition as sr
 # Funcao responsavel por ouvir e reconhecer a fala
 
 mapa = {
-    "cu": 0
+    "c*": 0
 }
 
 def ouvir_microfone():
@@ -30,6 +30,7 @@ while True:
     if frase is not None:
         palavras = frase.split(" ")
 
+        # Alterar lógica de leitura para cu
         for palavra in palavras:
             if (palavra in mapa) is False:
                 mapa[palavra] = 1
