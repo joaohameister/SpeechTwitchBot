@@ -21,12 +21,9 @@ async def event_message(ctx):
         return
     await bot.handle_commands(ctx)
 
-
 @bot.command(name='test')
 async def test(ctx):
     await ctx.send('test passed!')
 
 if __name__ == "__main__":
     bot.run()
-
-    
