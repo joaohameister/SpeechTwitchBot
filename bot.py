@@ -8,4 +8,25 @@ bot = commands.Bot(
     nick=os.environ['BOT_NICK'],
     prefix=os.environ['BOT_PREFIX'],
     initial_channels=[os.environ['CHANNEL']]
+    
 )
+
+@bot.event
+async def event_ready():
+    print("dale")
+
+@bot.event
+async def event_message(ctx):
+    if ctx.author.name.lower() == os.environ['BOT_NICK'].lower():
+        return
+    await bot.handle_commands(ctx)
+
+
+@bot.command(name='test')
+async def test(ctx):
+    await ctx.send('test passed!')
+
+if __name__ == "__main__":
+    bot.run()
+
+    
